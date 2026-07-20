@@ -143,9 +143,9 @@
       </group>
     </layout>
   </citation>
-  <bibliography second-field-align="flush">
+  <bibliography hanging-indent="true">
     <layout>
-      <text suffix="." variable="citation-number"/>
+      <text prefix="[" suffix="] " variable="citation-number"/>
       <group delimiter=". ">
         <group delimiter=". " suffix=".">
           <text macro="author"/>
