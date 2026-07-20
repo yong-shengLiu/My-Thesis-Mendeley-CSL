@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only">
   <info>
-    <title>IEEE Reference Guide 11.29.2023 – Full Authors, No DOI</title>
+    <title>IEEE Reference Guide 11.29.2023 – Full Authors, No DOI (Bracket Fixed)</title>
     <id>https://github.com/yongshengliu/custom-csl/ieee-reference-guide-2023-full-authors-no-doi</id>
     <link href="https://github.com/yongshengliu/custom-csl/ieee-reference-guide-2023-full-authors-no-doi" rel="self"/>
-    <!-- <link href="https://ieeeauthorcenter.ieee.org/wp-content/uploads/IEEE-Reference-Guide.pdf" rel="documentation"/> - 2018 guidelines -->
     <link href="http://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE_Reference_Guide.pdf" rel="documentation"/>
     <link href="https://journals.ieeeauthorcenter.ieee.org/your-role-in-article-production/ieee-editorial-style-manual/" rel="documentation"/>
     <author>
@@ -180,7 +179,6 @@
   </macro>
   <macro name="event">
     <choose>
-      <!-- Published Conference Paper -->
       <if type="paper-conference speech" match="any">
         <choose>
           <if variable="container-title" match="any">
@@ -189,7 +187,6 @@
               <text variable="container-title" font-style="italic"/>
             </group>
           </if>
-          <!-- Unpublished Conference Paper -->
           <else>
             <group delimiter=" ">
               <text term="presented at"/>
@@ -203,7 +200,6 @@
   <macro name="access">
     <choose>
       <if type="webpage post post-weblog" match="any">
-        <!-- https://url.com/ (accessed Mon. DD, YYYY). -->
         <choose>
           <if variable="URL">
             <group delimiter=". " prefix=" ">
@@ -221,14 +217,11 @@
         </choose>
       </if>
       <else-if variable="URL">
-        <!-- Accessed: Mon. DD, YYYY. [Medium]. Available: https://URL.com/ -->
         <group delimiter=". " prefix=" " suffix=". ">
-          <!-- Accessed: Mon. DD, YYYY. -->
           <group delimiter=": ">
             <text term="accessed" text-case="capitalize-first"/>
             <date variable="accessed" form="text"/>
           </group>
-          <!-- [Online Video]. -->
           <group prefix="[" suffix="]" delimiter=" ">
             <choose>
               <if variable="medium" match="any">
@@ -245,7 +238,6 @@
             </choose>
           </group>
         </group>
-        <!-- Available: https://URL.com/ -->
         <group delimiter=": " prefix=" ">
           <text term="available at" text-case="capitalize-first"/>
           <text variable="URL"/>
@@ -308,16 +300,14 @@
       </if>
     </choose>
   </macro>
-  <!-- Citation -->
+  <!-- Citation (Fixed) -->
   <citation>
     <sort>
       <key variable="citation-number"/>
     </sort>
     <layout delimiter=", ">
-      <group prefix="[" suffix="]" delimiter=", ">
-        <text variable="citation-number"/>
-        <text macro="citation-locator"/>
-      </group>
+      <text variable="citation-number" prefix="[" suffix="]"/>
+      <text macro="citation-locator" prefix=", "/>
     </layout>
   </citation>
   <!-- Bibliography -->
