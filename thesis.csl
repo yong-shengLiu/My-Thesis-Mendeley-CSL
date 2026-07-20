@@ -300,13 +300,13 @@
       </if>
     </choose>
   </macro>
-  <!-- Citation (Fixed) -->
-  <citation>
+  <!-- Citation -->
+  <citation collapse="citation-number">
     <sort>
       <key variable="citation-number"/>
     </sort>
-    <layout delimiter=", ">
-      <text variable="citation-number" prefix="[" suffix="]"/>
+    <layout prefix="[" suffix="]" delimiter="], [">
+      <text variable="citation-number"/>
       <text macro="citation-locator" prefix=", "/>
     </layout>
   </citation>
